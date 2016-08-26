@@ -4,16 +4,13 @@ import { Dropdown } from 'stardust'
 class Search extends Component {
   constructor(props) {
     super(props)
-
-    let temp = this.props.pokemon.map(poke => {
-      return {
-        value: poke.id,
-        text: poke.name
-      }
-    })
+    const { pokemon } = this.props
 
     this.state = {
-      options: temp
+      options: pokemon.map(poke => ({
+        value: poke.id,
+        text: poke.name
+      }))
     }
   }
 
